@@ -47,7 +47,8 @@ namespace KnightMove
             var sourceSpace = source.ToArray();
             var targetSpace = target.ToArray();
 
-            if (source[0] > 'I' || source[1] < '0' || source[1] > '8' || target[0] > 'I' || target[1] < '0' || target[1] > '8')
+            if (source[0] > 'H' || source[0] < 'A' || source[1] <= '0' || source[1] > '8' || target[0] > 'H' || target[0] < 'A' || target[1] <= '0' || target[1] > '8'
+                    || source.Length <= 0 || source.Length > 2 || target.Length <= 0 || target.Length > 2)
             {
                 return true;
             }
