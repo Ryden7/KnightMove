@@ -32,7 +32,12 @@ namespace KnightMove
 
             if (source == null || target == null || OutOfRange(source, target))
             {
-                return CreateResponse(400, "Please stay within the parameters of the board");
+                return CreateResponse(400, "Please stay within the parameters of the board.");
+            }
+
+            if (source.Equals(target))
+            {
+                return CreateResponse(400, "Start position must be different then end position.");
             }
 
             using (var scope = _serviceProvider.CreateScope())
